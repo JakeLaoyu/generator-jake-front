@@ -4,3 +4,10 @@
 
 /*mix*/
 @import './mix/page';
+
+
+// 注：PC端和移动端layer组件只能存在一个
+// layer弹窗,需要图片放在images/layer
+@import './lib/layer/layer';
+// 移动端layer样式
+// @import './lib/layer/mobile/layer';

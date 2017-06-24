@@ -1,5 +1,13 @@
 //通过webpack.config.js里配置alias引用jquery
 const $ = require('jquery');
+window.jQuery = $
+
+// 注：PC端和移动端layer组件只能存在一个
+// 引入PC端 layer 弹框组件 http://layer.layui.com/
+window.layer = require('layer')
+
+// 引入移动端端 layer 弹框组件 http://layer.layui.com/mobile/
+// window.layer = require('mobilelayer')
 
 $(function($) {
 	//增加全局方法
