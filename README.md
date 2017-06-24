@@ -59,4 +59,4 @@ npm install -g cnpm --registry=https://registry.npm.taobao.org
 之后便可以使用`cnpm install node-sass`安装
 
 ## License
-MIT
+MIT © [JakeLaoyu](https://github.com/JakeLaoyu)
