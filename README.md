@@ -1,38 +1,62 @@
-# generator-jake-front [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
-> front generator
+# 基于webpack和gulp的脚手架
 
-## Installation
+>声明：本脚手架经过[赞鱼鱼H5脚手架](https://github.com/zanseven007/generator-zyy-h5)修改，打造符合自己的脚手架
 
-First, install [Yeoman](http://yeoman.io) and generator-jake-front using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
+> - H5 日益普及，为了方便日后开发的方便，特此写一个模板生成器为日后使用
+> - 在HTML中支持使用 @@include 引入一个 .inc 文件
+> - 在CSS文件中可以使用 scss 进行开发，发布时将小图片转换为base64格式
+> - 预置了一些动画库和常用的动画逻辑代码，方便写出丝滑的动画
+> - 在JS当中利用webpack合并了公共模块，可以有任意个入口文件,并区分生产和开发环境（开发环境不进行代码压缩，极大提高打包速度）
+> - 开发时可自动启动 Chrome 浏览器，并且打开本地3000端口来调试
 
-```bash
-npm install -g yo
-npm install -g generator-jake-front
+## 使用yoeman创建模板
+安装 yo
+
 ```
+[sudo] npm install -g yo
+```
+安装H5模板生成器
 
-Then generate your new project:
+```
+[sudo] npm install -g generator-jake-front
+```
+新建一个项目目录并进入
 
-```bash
+```
+mkdir dir && cd $_
+```
+使用H5模板，这个命令会自动安装依赖(npm install)，建议终止掉，然后使用 `cnpm` 或 `yarn` 来安装，因为速度飞快。
+
+```
 yo jake-front
 ```
 
-## Getting To Know Yeoman
+## 使用模板
+开发
 
- * Yeoman has a heart of gold.
- * Yeoman is a person with feelings and opinions, but is very easy to work with.
- * Yeoman can be too opinionated at times but is easily convinced not to be.
- * Feel free to [learn more about Yeoman](http://yeoman.io/).
+```
+gulp dev
+```
+发布(会压缩css和js，并增加md5)
+```
+gulp dist
+```
+
+## 可选参数
+
+- `--html` 压缩 html 文件，发布线上需要时可以加上 `gulp dist --html`
+
+## ISSUE
+
+**node-sass安装失败解决办法**：因为在安装`node-sass`的时候它把github Releases里的文件都托管在`s3.amazonaws.com`上面，而这个网址在国内总是网络不稳定，所以推荐使用`cnpm`,`yarn`来安装我们的依赖，也可以通过淘宝镜像去下载这个文件。
+
+### cnpm配置
+
+```
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+```
+
+之后便可以使用`cnpm install node-sass`安装
 
 ## License
-
-MIT © [Jake](https://i.jakeyu.top)
-
-
-[npm-image]: https://badge.fury.io/js/generator-jake-front.svg
-[npm-url]: https://npmjs.org/package/generator-jake-front
-[travis-image]: https://travis-ci.org/JakeLaoyu/generator-jake-front.svg?branch=master
-[travis-url]: https://travis-ci.org/JakeLaoyu/generator-jake-front
-[daviddm-image]: https://david-dm.org/JakeLaoyu/generator-jake-front.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/JakeLaoyu/generator-jake-front
-[coveralls-image]: https://coveralls.io/repos/JakeLaoyu/generator-jake-front/badge.svg
-[coveralls-url]: https://coveralls.io/r/JakeLaoyu/generator-jake-front
+MIT
