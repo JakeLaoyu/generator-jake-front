@@ -15,7 +15,7 @@
 ```
 [sudo] npm install -g yo
 ```
-安装H5模板生成器
+安装模板生成器
 
 ```
 [sudo] npm install -g generator-jake-front

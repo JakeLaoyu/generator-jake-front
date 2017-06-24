@@ -15,7 +15,7 @@
 ```
 [sudo] npm install -g yo
 ```
-安装H5模板生成器
+安装模板生成器
 
 ```
 [sudo] npm install -g generator-jake-front
@@ -59,4 +59,4 @@ npm install -g cnpm --registry=https://registry.npm.taobao.org
 之后便可以使用`cnpm install node-sass`安装
 
 ## License
-MIT
+MIT © [JakeLaoyu](https://github.com/JakeLaoyu)
