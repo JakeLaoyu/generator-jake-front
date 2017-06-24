@@ -1,0 +1,3 @@
+node_modules
+generators/app/templates/dist
+coverage

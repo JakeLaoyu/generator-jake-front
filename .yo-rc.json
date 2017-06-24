@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Jake",
+      "authorEmail": "Jake.Laoyu@gmail.com",
+      "authorUrl": "https://i.jakeyu.top"
+    }
+  }
+}
