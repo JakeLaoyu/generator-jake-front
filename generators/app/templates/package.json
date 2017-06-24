@@ -1,13 +1,17 @@
 {
   "name": "jake-front",
-  "version": "0.0.1",
+  "version": "1.0.5",
   "description": "",
   "main": "dist/js/main.js",
   "scripts": {
     "dev": "gulp dev",
     "dist": "gulp dist"
   },
-  "author": "Jake",
+  "author": {
+    "name": "Jake",
+    "email": "Jake.Laoyu@gmail.com",
+    "url": "https://i.jakeyu.top"
+  },
   "devDependencies": {
     "babel-core": "^6.16.0",
     "babel-loader": "^6.2.4",

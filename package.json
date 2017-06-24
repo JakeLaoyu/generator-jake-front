@@ -1,7 +1,7 @@
 {
   "name": "generator-jake-front",
-  "version": "1.0.0",
-  "description": "front generator",
+  "version": "1.0.5",
+  "description": "基于Webpack的项目目录快速生成器",
   "homepage": "",
   "author": {
     "name": "Jake",
@@ -13,8 +13,11 @@
   ],
   "main": "generators/index.js",
   "keywords": [
-    "jake",
-    "yeoman-generator"
+    "yeoman-generator",
+    "yeoman",
+    "H5",
+    "gulp",
+    "Webpack"
   ],
   "devDependencies": {
     "coveralls": "^2.12.0",
