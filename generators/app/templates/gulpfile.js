@@ -39,7 +39,7 @@ var knownOptions = {
 };
 var options = minimist(process.argv.slice(2), knownOptions);
 
-//mac chrome: "Google chrome", 
+//mac chrome: "Google chrome",
 var browser = os.platform() === 'linux' ? 'Google chrome' : (
     os.platform() === 'darwin' ? 'Google chrome' : (
         os.platform() === 'win32' ? 'chrome' : 'firefox'));
@@ -61,9 +61,9 @@ gulp.task('htmlmin', ['fileinclude'], function() {
         // minifyJS: true,//压缩页面JS
         // minifyCSS: true//压缩页面CSS
     };
-    gulp.src('dist/app/*.html')
+    gulp.src('dist/html/*.html')
         .pipe(gulpif(options.html, htmlmin(htmlOptions)))
-        .pipe(gulp.dest('dist/app'));
+        .pipe(gulp.dest('dist/html'));
 
 });
 //压缩合并css, css中既有自己写的.scss, 也有引入第三方库的.css
@@ -85,7 +85,7 @@ gulp.task('scssmin', function(done) {
 //将js加上10位md5,并修改html中的引用路径，该动作依赖build-js
 gulp.task('md5:js', ['build-js-pro'], function(done) {
     gulp.src('dist/js/*.js')
-        .pipe(md5(10, 'dist/app/*.html'))
+        .pipe(md5(10, 'dist/html/*.html'))
         .pipe(gulp.dest('dist/js'))
         .on('end', done);
 });
@@ -93,19 +93,19 @@ gulp.task('md5:js', ['build-js-pro'], function(done) {
 //将css加上10位md5，并修改html中的引用路径，该动作依赖build-css
 gulp.task('md5:css', ['build-css'], function(done) {
     gulp.src('dist/css/*.css')
-        .pipe(md5(10, 'dist/app/*.html'))
+        .pipe(md5(10, 'dist/html/*.html'))
         .pipe(gulp.dest('dist/css'))
         .on('end', done);
 });
 
 //用于在html文件中直接include文件
 gulp.task('fileinclude', function(done) {
-    gulp.src(['src/app/*.html'])
+    gulp.src(['src/html/*.html'])
         .pipe(fileinclude({
             prefix: '@@',
             basepath: '@file'
         }))
-        .pipe(gulp.dest('dist/app'))
+        .pipe(gulp.dest('dist/html'))
         .on('end', done);
 
 });
@@ -147,7 +147,7 @@ gulp.task('open', function(done) {
     gulp.src('')
         .pipe(gulpOpen({
             app: browser,
-            uri: 'http://localhost:3000/app'
+            uri: 'http://localhost:3000/html'
         }))
         .on('end', done);
 });
@@ -183,7 +183,7 @@ gulp.task("build-js-pro", ['fileinclude'], function(callback) {
 });
 
 //发布
-gulp.task('dist', ['clean:css', 'clean:js', 'htmlmin', 'md5:css', 'md5:js', 'connect', 'open']);
+gulp.task('dist', ['clean:css', 'clean:js', 'htmlmin', 'md5:css', 'md5:js']);
 
 //开发
 gulp.task('dev', ['copy:images', 'htmlmin', 'scssmin', 'build-js-dev', 'connect', 'watch', 'open']);
