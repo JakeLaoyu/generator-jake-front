@@ -1,54 +1,54 @@
 {
-    "name": "generator-jake-front",
-    "version": "1.1.0",
-    "description": "基于Webpack的项目目录快速生成器",
-    "homepage": "",
-    "author": {
-        "name": "Jake",
-        "email": "Jake.Laoyu@gmail.com",
-        "url": "https://i.jakeyu.top"
-    },
-    "files": [
-        "generators"
-    ],
-    "main": "generators/index.js",
-    "keywords": [
-        "yeoman-generator",
-        "yeoman",
-        "H5",
-        "gulp",
-        "Webpack"
-    ],
-    "devDependencies": {
-        "coveralls": "^2.12.0",
-        "eslint": "^3.18.0",
-        "eslint-config-xo-space": "^0.16.0",
-        "jest": "^19.0.2",
-        "jest-cli": "^20.0.0",
-        "nsp": "^2.6.3",
-        "yeoman-assert": "^3.0.0",
-        "yeoman-generator": "1.1.1",
-        "yeoman-test": "^1.6.0"
-    },
-    "dependencies": {
-        "chalk": "^1.1.3",
-        "yosay": "^2.0.0"
-    },
-    "jest": {
-        "testEnvironment": "node"
-    },
-    "scripts": {
-        "prepublish": "nsp check",
-        "pretest": "eslint . --fix",
-        "test": "jest"
-    },
-    "eslintConfig": {
-        "extends": "xo-space",
-        "env": {
-            "jest": true,
-            "node": true
-        }
-    },
-    "repository": "JakeLaoyu/generator-jake-front",
-    "license": "MIT"
+  "name": "generator-jake-front",
+  "version": "1.1.1",
+  "description": "基于Webpack的项目目录快速生成器",
+  "homepage": "",
+  "author": {
+    "name": "Jake",
+    "email": "Jake.Laoyu@gmail.com",
+    "url": "https://i.jakeyu.top"
+  },
+  "files": [
+    "generators"
+  ],
+  "main": "generators/index.js",
+  "keywords": [
+    "yeoman-generator",
+    "yeoman",
+    "H5",
+    "gulp",
+    "Webpack"
+  ],
+  "devDependencies": {
+    "coveralls": "^2.12.0",
+    "eslint": "^3.18.0",
+    "eslint-config-xo-space": "^0.16.0",
+    "jest": "^19.0.2",
+    "jest-cli": "^20.0.0",
+    "nsp": "^2.6.3",
+    "yeoman-assert": "^3.0.0",
+    "yeoman-generator": "1.1.1",
+    "yeoman-test": "^1.6.0"
+  },
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "yosay": "^2.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "scripts": {
+    "prepublish": "nsp check",
+    "pretest": "eslint . --fix",
+    "test": "jest"
+  },
+  "eslintConfig": {
+    "extends": "xo-space",
+    "env": {
+      "jest": true,
+      "node": true
+    }
+  },
+  "repository": "JakeLaoyu/generator-jake-front",
+  "license": "MIT"
 }
