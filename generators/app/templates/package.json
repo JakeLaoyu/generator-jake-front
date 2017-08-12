@@ -1,15 +1,15 @@
 {
-  "name": "jake-front",
+  "name": "<%= name %>",
   "version": "1.0.6",
-  "description": "",
+  "description": "<%= description %>",
   "main": "dist/js/main.js",
   "scripts": {
     "dev": "gulp dev",
     "dist": "gulp dist"
   },
   "author": {
-    "name": "Jake",
-    "email": "Jake.Laoyu@gmail.com",
+    "name": "<%= author %>",
+    "email": "<%= email %>",
     "url": "https://i.jakeyu.top"
   },
   "devDependencies": {
