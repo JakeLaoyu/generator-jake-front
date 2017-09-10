@@ -24,8 +24,7 @@ var gulp = require('gulp'),
   webpackConfigPro = require('./webpack.config.pro.js'),
   webpackConfigEslint = require('./webpack.config.eslint.js'),
   connect = require('gulp-connect'),
-  sourcemaps = require('gulp-sourcemaps'),
-  eslint = require('gulp-eslint');
+  sourcemaps = require('gulp-sourcemaps');
 
 var host = {
   path: 'dist/',
