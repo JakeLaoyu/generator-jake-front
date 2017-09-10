@@ -22,8 +22,10 @@ var gulp = require('gulp'),
   webpack = require('webpack'),
   webpackConfigDev = require('./webpack.config.dev.js'),
   webpackConfigPro = require('./webpack.config.pro.js'),
+  webpackConfigEslint = require('./webpack.config.eslint.js'),
   connect = require('gulp-connect'),
-  sourcemaps = require('gulp-sourcemaps');
+  sourcemaps = require('gulp-sourcemaps'),
+  eslint = require('gulp-eslint');
 
 var host = {
   path: 'dist/',
@@ -38,6 +40,7 @@ var knownOptions = {
   }
 };
 var options = minimist(process.argv.slice(2), knownOptions);
+console.log(options)
 
 //mac chrome: "Google chrome",
 var browser = os.platform() === 'linux' ? 'Google chrome' : (
@@ -153,15 +156,25 @@ gulp.task('open', function(done) {
 });
 
 var myDevConfig = Object.create(webpackConfigDev);
-
 var devCompiler = webpack(myDevConfig);
 
-var myProConfig = Object.create(webpackConfigPro);
+var myDevConfigEslint = Object.create(webpackConfigEslint);
+var devCompilerEslint = webpack(myDevConfigEslint);
 
+var myProConfig = Object.create(webpackConfigPro);
 var proCompiler = webpack(myProConfig);
 
 //引用webpack对js进行操作--dev
 gulp.task("build-js-dev", ['fileinclude'], function(callback) {
+  if (options.eslint) {
+    return devCompilerEslint.run(function(err, stats) {
+      if (err) throw new gutil.PluginError("webpack:build-js", err);
+      gutil.log("[webpack:build-js]", stats.toString({
+        colors: true
+      }));
+      callback();
+    });
+  }
   devCompiler.run(function(err, stats) {
     if (err) throw new gutil.PluginError("webpack:build-js", err);
     gutil.log("[webpack:build-js]", stats.toString({

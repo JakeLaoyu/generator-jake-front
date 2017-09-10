@@ -77,6 +77,16 @@ module.exports = yeoman.extend({
     );
 
     this.fs.copy(
+      this.templatePath("webpack.config.eslint.js"),
+      this.destinationPath("webpack.config.eslint.js")
+    );
+
+    this.fs.copy(
+      this.templatePath(".eslintrc"),
+      this.destinationPath(".eslintrc")
+    );
+
+    this.fs.copy(
       this.templatePath("gulpfile.js"),
       this.destinationPath("gulpfile.js")
     );

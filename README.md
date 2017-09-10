@@ -45,6 +45,7 @@ gulp dist
 ## 可选参数
 
 - `--html` 压缩 html 文件，发布线上需要时可以加上 `gulp dist --html`
+- `--eslint` eslint检测，开发时加上 `gulp dev --eslint`
 
 ## 包含的库
 

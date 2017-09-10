@@ -1,3 +1,10 @@
+/**
+ * @Author: Jake
+ * @Date:   2017-09-10T21:23:24+08:00
+ * @Email:  yucj@dxy.cn
+ * @Last modified by:   Jake
+ * @Last modified time: 2017-09-10T21:23:36+08:00
+ */
 var CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
 var path = require('path');
 var webpack = require('webpack');
@@ -34,7 +41,7 @@ module.exports = {
     // noParse: /node_modules\/hls.js\/dist\/hls.js/,
     loaders: [{
       test: /\.js$/,
-      loader: 'babel',
+      loader: 'eslint-loader',
       include: path.join(__dirname, "src/js/"),
       query: {
         presets: ['es2015']
