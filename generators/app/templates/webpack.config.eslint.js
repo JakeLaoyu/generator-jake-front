@@ -58,6 +58,10 @@ module.exports = {
     }
   },
   plugins: [
-    new CommonsChunkPlugin('common', 'common.js', Infinity),
+    new CommonsChunkPlugin({
+      name: 'common',
+      filename: 'common.js',
+      minChunks: Infinity
+    }),
   ]
 };

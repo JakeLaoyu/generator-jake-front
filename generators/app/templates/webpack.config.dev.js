@@ -34,7 +34,7 @@ module.exports = {
     // noParse: /node_modules\/hls.js\/dist\/hls.js/,
     loaders: [{
       test: /\.js$/,
-      loader: 'babel',
+      loader: 'babel-loader',
       include: path.join(__dirname, "src/js/"),
       query: {
         presets: ['es2015']
@@ -51,6 +51,10 @@ module.exports = {
     }
   },
   plugins: [
-    new CommonsChunkPlugin('common', 'common.js', Infinity),
+    new CommonsChunkPlugin({
+      name: 'common',
+      filename: 'common.js',
+      minChunks: Infinity
+    }),
   ]
 };
