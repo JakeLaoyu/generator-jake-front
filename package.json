@@ -1,6 +1,6 @@
 {
   "name": "generator-jake-front",
-  "version": "1.1.9",
+  "version": "1.2.1",
   "description": "基于Webpack的项目目录快速生成器",
   "homepage": "",
   "author": {

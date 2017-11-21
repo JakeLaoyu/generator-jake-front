@@ -1,14 +1,14 @@
 var path = require('path');
 var chalk = require('chalk'); // 不同颜色的info
-var yeoman = require('yeoman-generator');
+var Generator = require('yeoman-generator');
 var yosay = require('yosay'); // Yeoman弹出框
 const fs = require('fs');
-module.exports = yeoman.extend({
-  info: function() {
+module.exports = class extends Generator {
+  info() {
     this.log(chalk.green(
       'I am going to build your front templates!'
     ));
-  },
+  }
   prompting() {
     // Have Yeoman greet the user.
     this.log(yosay(
@@ -45,8 +45,8 @@ module.exports = yeoman.extend({
       // To access props later use this.props.someAnswer;
       this.props = props;
     });
-  },
-  generateBasic: function() { // 按照自己的templates目录自定义
+  }
+  writing() { // 按照自己的templates目录自定义
     // 拷贝目录
     this.fs.copy(this.templatePath("src"), this.destinationPath("src"));
     // this.fs.copy(this.templatePath("dist"), this.destinationPath("dist"));
@@ -95,21 +95,21 @@ module.exports = yeoman.extend({
       this.templatePath(".gitignore"),
       this.destinationPath(".gitignore")
     );
-  },
-  generateClient: function() {
+  }
+  generateClient() {
     this.sourceRoot(path.join(__dirname, 'templates'));
     this.destinationPath('./');
-  },
-  install: function() { // 安装依赖
+  }
+  install() { // 安装依赖
     this.installDependencies({
       npm: true,
       bower: false,
       yarn: false
     });
-  },
-  end: function() {
+  }
+  end() {
     this.log(yosay(
       'Your front templates has been created successfully!'
     ));
   }
-});
+};
