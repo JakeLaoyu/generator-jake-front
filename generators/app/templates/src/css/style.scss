@@ -1,11 +1,20 @@
+/*媒体查询
+  @media #{$mobile}{
+
+  }
+*/
+
+$mobile: only screen and (max-device-width: 720px),
+only screen and (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 720px);
+
 /*lib*/
+
 @import './lib/reset';
 @import './lib/animate';
 
 /*mix*/
+
 @import './mix/page';
-
-
 // 注：PC端和移动端layer组件只能存在一个
 // layer弹窗,需要图片放在images/layer
 @import './lib/layer/layer';
