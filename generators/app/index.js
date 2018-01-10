@@ -48,50 +48,50 @@ module.exports = class extends Generator {
   }
   writing() { // 按照自己的templates目录自定义
     // 拷贝目录
-    this.fs.copy(this.templatePath("src"), this.destinationPath("src"));
-    // this.fs.copy(this.templatePath("dist"), this.destinationPath("dist"));
+    this.fs.copy(this.templatePath('src'), this.destinationPath('src'));
+    // This.fs.copy(this.templatePath("dist"), this.destinationPath("dist"));
     // 拷贝文件
     this.fs.copyTpl(
-      this.templatePath("package.json"),
-      this.destinationPath("package.json"), {
+      this.templatePath('package.json'),
+      this.destinationPath('package.json'), {
         name: this.props.name,
         description: this.props.description,
         author: this.props.author,
-        email: this.props.email,
+        email: this.props.email
       }
     );
 
     this.fs.copy(
-      this.templatePath("README.md"),
-      this.destinationPath("README.md")
+      this.templatePath('README.md'),
+      this.destinationPath('README.md')
     );
 
     this.fs.copy(
-      this.templatePath("webpack.config.dev.js"),
-      this.destinationPath("webpack.config.dev.js")
+      this.templatePath('webpack.config.dev.js'),
+      this.destinationPath('webpack.config.dev.js')
     );
 
     this.fs.copy(
-      this.templatePath("webpack.config.pro.js"),
-      this.destinationPath("webpack.config.pro.js")
+      this.templatePath('webpack.config.pro.js'),
+      this.destinationPath('webpack.config.pro.js')
     );
 
     this.fs.copy(
-      this.templatePath("webpack.config.eslint.js"),
-      this.destinationPath("webpack.config.eslint.js")
+      this.templatePath('webpack.config.eslint.js'),
+      this.destinationPath('webpack.config.eslint.js')
     );
 
     this.fs.copy(
-      this.templatePath(".eslintrc"),
-      this.destinationPath(".eslintrc")
+      this.templatePath('.eslintrc'),
+      this.destinationPath('.eslintrc')
     );
 
     this.fs.copy(
-      this.templatePath("gulpfile.js"),
-      this.destinationPath("gulpfile.js")
+      this.templatePath('gulpfile.js'),
+      this.destinationPath('gulpfile.js')
     );
 
-    // this.fs.copy(
+    // This.fs.copy(
     //   this.templatePath(".gitignore"),
     //   this.destinationPath(".gitignore")
     // );
