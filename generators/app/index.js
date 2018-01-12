@@ -2,7 +2,6 @@ var path = require('path');
 var chalk = require('chalk'); // 不同颜色的info
 var Generator = require('yeoman-generator');
 var yosay = require('yosay'); // Yeoman弹出框
-const fs = require('fs');
 module.exports = class extends Generator {
   info() {
     this.log(chalk.green(
@@ -82,8 +81,13 @@ module.exports = class extends Generator {
     );
 
     this.fs.copy(
-      this.templatePath('.eslintrc'),
-      this.destinationPath('.eslintrc')
+      this.templatePath('_eslintrc.yaml'),
+      this.destinationPath('.eslintrc.yaml')
+    );
+
+    this.fs.copy(
+      this.templatePath('_eslintignore'),
+      this.destinationPath('.eslintignore')
     );
 
     this.fs.copy(
@@ -91,10 +95,10 @@ module.exports = class extends Generator {
       this.destinationPath('gulpfile.js')
     );
 
-    // This.fs.copy(
-    //   this.templatePath(".gitignore"),
-    //   this.destinationPath(".gitignore")
-    // );
+    this.fs.copy(
+      this.templatePath('_gitignore'),
+      this.destinationPath('.gitignore')
+    );
   }
   generateClient() {
     this.sourceRoot(path.join(__dirname, 'templates'));
