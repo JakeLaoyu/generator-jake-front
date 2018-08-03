@@ -2,7 +2,7 @@ var CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
 var path = require('path');
 var webpack = require('webpack');
 var fs = require('fs');
-var uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 
 var srcDir = path.resolve(process.cwd(), 'src');
 
@@ -57,10 +57,6 @@ module.exports = {
       filename: 'common.js',
       minChunks: Infinity
     }),
-    new uglifyJsPlugin({
-      compress: {
-        warnings: false
-      }
-    })
+    new UglifyJSPlugin()
   ]
 };
