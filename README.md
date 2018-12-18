@@ -1,7 +1,5 @@
 # 基于webpack和gulp的脚手架
 
->声明：本脚手架经过[赞鱼鱼H5模板生成器](https://github.com/zanseven007/generator-zyy-h5)修改，打造符合自己的脚手架
-
 > - 为了方便日后开发的方便，写此模版，用于今后开发
 > - 在HTML中支持使用 @@include 引入一个 .inc 文件
 > - 在CSS文件中可以使用 scss 进行开发，发布时将小图片转换为base64格式
