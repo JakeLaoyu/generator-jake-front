@@ -1,8 +1,8 @@
 {
   "name": "generator-jake-front",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "description": "基于Webpack的项目目录快速生成器",
-  "homepage": "",
+  "homepage": "https://github.com/JakeLaoyu/generator-jake-front",
   "author": {
     "name": "Jake",
     "email": "e@jakeyu.top",
